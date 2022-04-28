@@ -6,6 +6,10 @@ jobs:
   build:
     docker:
       - image: "cimg/base:stable"
+    steps:
+      - node/install
+      - checkout
+      - aws-cli/setup
       - run:
         name: install dependencies
         command: |
