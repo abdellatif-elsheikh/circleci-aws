@@ -11,14 +11,14 @@ jobs:
       - checkout
       - aws-cli/setup
       - run:
-        name: install dependencies
-        command: |
-          npm install
+          name: install dependencies
+          command: |
+            npm install
       - run:
-        name: build app
-        command: |
-          npm run build
+          name: build app
+          command: |
+            npm run build
       - run:
-        name: deploy app
-        command: |
-          npm run deploy
+          name: deploy app
+          command: |
+            npm run deploy
