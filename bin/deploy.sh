@@ -1,1 +1,1 @@
-aws s3 sync build s3://circleci-aws-1
+aws s3 cp --recursive --acl public-read ./build s3://circleci-aws-1
