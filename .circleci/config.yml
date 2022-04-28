@@ -1,0 +1,24 @@
+version: 2.1
+orbs:
+  node: circleci/node@16.14.0
+  aws-cli: circleci/aws-cli@2.5.5
+jobs:
+  build:
+    docker:
+      - image: "cimg/base:stable"
+    steps:
+      - node/install
+      - checkout
+      - aws-cli/setup
+      - run:
+        name: install dependencies
+        command: |
+          npm install
+      - run:
+        name: build app
+        command: |
+          npm run build
+      -run:
+        name: deploy app
+        command: |
+          npm run deploy
